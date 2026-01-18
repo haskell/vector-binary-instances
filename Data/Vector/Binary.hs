@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 {-# OPTIONS_GHC -fno-warn-orphans #-}
 --------------------------------------------------------------------
 -- |
@@ -50,6 +51,9 @@ import qualified Data.Vector.Unboxed   as U
 import qualified Data.Vector.Storable  as S
 import qualified Data.Vector.Primitive as P
 import Data.Vector (Vector)
+#if MIN_VERSION_vector(0,13,2)
+import qualified Data.Vector.Strict as VV
+#endif
 import System.IO.Unsafe
 
 import Foreign.Storable (Storable)
@@ -61,6 +65,14 @@ instance Binary a => Binary (Vector a) where
     put = genericPutVector
     get = genericGetVector
     {-# INLINE get #-}
+
+#if MIN_VERSION_vector(0,13,2)
+instance Binary a => Binary (VV.Vector a) where
+    put = genericPutVector
+    get = genericGetVector
+    {-# INLINE get #-}
+#endif
+
 
 -- | Unboxed vectors
 instance (U.Unbox a, Binary a) => Binary (U.Vector a) where
