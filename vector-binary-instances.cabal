@@ -30,8 +30,8 @@ Description:
    instances.
 
 -- URL for the project homepage or repository.
-Homepage:            https://github.com/bos/vector-binary-instances
-bug-reports:         https://github.com/bos/vector-binary-instances/issues
+Homepage:            https://github.com/haskell/vector-binary-instances
+bug-reports:         https://github.com/haskell/vector-binary-instances/issues
 License:             BSD-3-Clause
 License-file:        LICENSE
 Author:              Don Stewart
@@ -41,8 +41,12 @@ Category:            Data
 Build-type:          Simple
 
 tested-with:
-  GHC == 9.6.2
-  GHC == 9.4.5
+  GHC == 9.14.1
+  GHC == 9.12.2
+  GHC == 9.10.3
+  GHC == 9.8.4
+  GHC == 9.6.7
+  GHC == 9.4.8
   GHC == 9.2.8
   GHC == 9.0.2
   GHC == 8.10.7
@@ -51,10 +55,7 @@ tested-with:
   GHC == 8.4.4
   GHC == 8.2.2
   GHC == 8.0.2
-  GHC == 7.10.3
-  GHC == 7.8.4
-  GHC == 7.6.3
-  GHC == 7.4.2
+
 
 Library
   Ghc-options: -Wall
@@ -97,4 +98,4 @@ Test-Suite tests
 
 source-repository head
   type:     git
-  location: https://github.com/bos/vector-binary-instances
+  location: https://github.com/haskell/vector-binary-instances
