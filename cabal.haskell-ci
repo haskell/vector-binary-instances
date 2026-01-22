@@ -1,1 +1,5 @@
 branches: master
+-- Andreas Abel, 2026-01-22
+-- benchmarks have a conditional use of package deepseq
+-- so we turn off -Werror=unused-packages that Haskell CI inserts otherwise
+error-unused-packages: False
